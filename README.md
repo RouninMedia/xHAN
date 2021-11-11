@@ -73,14 +73,23 @@ But *this* **xHAN**:
 
 represents a data-structure which refuses to correspond with JSON syntax.
 
-It doesn't take much inspection to see that a JSON-like construct visually similar to the **xHAN** above *actually **isn't** valid JSON*:
+It doesn't take much inspection to see that a JSON-like construct visually similar to the **xHAN** above *actually **won't** validate as JSON*:
 
     [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "array"]
     
-This is because in JSON data-blocks either use:
+This is because JSON has two principal types of data-block:
 
- - JS array-notation (`[]`) which contains a series of values
- - JS object-notation (`{}`) which contains a series of name-value pairs
+ - JS array-notation data-blocks which contain a series of values (`[]`) 
+ - JS object-notation data-blocks which contains a series of name-value pairs (`{}`)
 
-But the JSON-like construct immediately above contains a series of both values (e.g. `"a"`) *and* name-value pairs (e.g. `"mixed": "array"`).
+By contrast, **xHAN** has only **one** type of data-block:
+
+ - *mixed-array data-blocks* which contain a series of *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="array"`)
+
+Because of this crucial difference, when you convert the second **xHAN** above into JSON, the conversion delivers the following output:
+
+*Wah-waaah:*
+
+    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"which":"represents","mixed":"array","2":"xHAN","3":"a"}
+
 
