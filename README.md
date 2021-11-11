@@ -42,7 +42,7 @@ For example the JSON above, written in **xHAN** would look like this:
     
 A cursory glance reveals that **xHAN** notation is *not* radically different from **JSON** notation.
 
-But it *is*, quite intentionally, a little shorter and simpler to write, not least because it is derived from HTML, rather than JavaScript.
+But it *is*, quite intentionally, a little shorter and simpler to write, not least because the notation is borrowed from HTML syntax, rather than from JavaScript.
 
 ## Differences between xHAN and JSON
 
