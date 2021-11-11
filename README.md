@@ -1,5 +1,5 @@
 # xHAN
-xHAN is *e**X**tended **H**TML **A**ttribute **N**otation*.
+xHAN is *e**x**tended **H**TML **A**ttribute **N**otation*.
 
 HTML attributes typically display as a name-value pair:
 
