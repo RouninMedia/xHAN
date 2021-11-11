@@ -45,5 +45,5 @@ The key differences between **xHAN** and **JSON** are:
 
  - **xHAN** is more concise, though seeks to be as human-readable as JSON
  - **xHAN** only requires quotes around values (while JSON requires quotes around keys *and* values)
- - in **xHAN**, square brackets (`[` and `]`) play double duty representing the equivalent of both `{}` *and* `[]` in JSON
+ - in **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
  - 
