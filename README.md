@@ -3,11 +3,11 @@ xHAN is *e**X**tended **H**TML **A**ttribute **N**otation*.
 
 HTML attributes typically display as a name-value pair:
 
-`myattribute="myvalue"` (**e.g.** `title="This will display as a tooltip"`)
+**e.g.** `title="This will display as a tooltip"`
 
 Occasionally, we see HTML attributes which have no value:
 
-`myattribute` (**e.g.** `checked`)
+**e.g.** `checked`
 
 Conventionally, **HTML Attribute Values** consist of a single string - although this string may also include spaces.
 
