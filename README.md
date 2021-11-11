@@ -77,7 +77,7 @@ It doesn't take much inspection to see that a JSON-like construct visually simil
 
     [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "array"]
     
-This is because JSON has two principal types of data-block:
+This is because JSON has *two* principal types of data-block:
 
  - JS array-notation data-blocks which contain a series of values (`[]`) 
  - JS object-notation data-blocks which contains a series of name-value pairs (`{}`)
@@ -86,10 +86,10 @@ By contrast, **xHAN** has only **one** type of data-block:
 
  - *mixed-array data-blocks* which contain a series of *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="array"`)
 
-Because of this crucial difference, when you convert the second **xHAN** above into JSON, the conversion delivers the following output:
+Because of this crucial difference, when you computationally convert the second **xHAN** above into JSON, the conversion delivers the following output:
 
-*Wah-waaah:*
+    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"2":"xHAN","which":"represents","4":"a","mixed":"array"}
 
-    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"which":"represents","mixed":"array","2":"xHAN","3":"a"}
+which *is* valid JSON.
 
 
