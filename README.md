@@ -9,23 +9,29 @@ Occasionally, we see HTML attributes which have a name but no value (since the v
 
 **e.g.** `checked`
 
-Where HTML Attributes do have values, then, conventionally, **HTML Attribute Values** consist of a single string - although this string may also include spaces.
+Where HTML Attributes do have values, then, conventionally, **HTML Attribute Values** consist of a single string.
 
-If an **HTML Attribute Value** is required to represent a more sophisticated data structure, there aren't many options.
+This string may also include commas or spaces, so rather than a single value, the single string *may* represent a comma-separated (or space-separated) list of values.
+
+But if an **HTML Attribute Value** is required to represent a more sophisticated data structure, there aren't many options.
 
 One option - possibly the only one - is for the value to be written as a **JSON String** which may then be parsed into a javascript object (or PHP array etc.):
 
     myattribute='[{"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]'
     
-There really haven't been any other options in HTML. But, then again, in HTML it's probable that no other options are really needed.
+In HTML it's probable that no other options are really needed.
 
-In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, an alternative declarative syntax to JSON might well prove very useful.
+In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, an alternative declarative syntax to JSON might prove very useful.
 
 This is where **xHAN** comes in.
 
-**xHAN** allows for the deployment of indexed, associative and mixed arrays. **xHAN** also allows for multidimensional arrays of these types.
+**xHAN** uses HTML-like notation and allows for the deployment of indexed, associative and mixed arrays.
 
-**xHAN** achieves all of this through the simple expedient of allowing an `=` sign to be followed by square brackets (`[...]`), within which comma-separated attribute names, quoted keys and square brackets may be nested - and nested to any depth.
+**xHAN** also allows for multidimensional arrays of these types.
+
+**xHAN** achieves all of this through the simple expedient of allowing an `=` sign to be followed by unquoted square brackets (`[...]`).
+
+Within the square brackets, comma-separated key-value pairs and lone keys may be nested - and nested within additional unquoted square brackets to any depth.
 
 For example the JSON above, written in **xHAN** would look like this:
 
