@@ -48,9 +48,9 @@ But it *is*, quite intentionally, a little shorter and simpler to write, not lea
 
 The main key differences between **xHAN** and **JSON** are:
 
- - **xHAN** uses an `=` as a key-value separator, instead of `: `
- - **xHAN** only requires quotes around values (while JSON requires quotes around keys *and* values)
- - in **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
+ - Like HTML, **xHAN** uses an `=` as a key-value separator, instead of `: `
+ - Like HTML, **xHAN** only requires quotes around `values` (while JSON requires quotes around `keys` *and* `values`)
+ - In **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
  - **xHAN** is *visibly* more concise (though it aspires to be as human-readable as JSON)
 
 ## Mixed Data in xHAN
