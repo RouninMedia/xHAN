@@ -40,7 +40,7 @@ For example the JSON above, written in **xHAN** would look like this:
 
     myattribute=[[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
     
-A cursory glance reveals that **xHAN** notation is not radically different from **JSON** notation.
+A cursory glance reveals that **xHAN** notation is *not* radically different from **JSON** notation.
 
 But it *is*, quite intentionally, a little shorter and simpler to write, not least because it is derived from HTML, rather than JavaScript.
 
