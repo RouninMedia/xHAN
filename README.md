@@ -24,7 +24,7 @@ In HTML it's probable that no other approaches are really needed.
 
 ## Presenting xHAN: an alternative to using JSON in HTML Attributes
 
-In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, an alternative declarative syntax to JSON might prove very useful.
+In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, a declarative syntax, alternative to JSON, might prove very welcome.
 
 This is where **xHAN** comes in.
 
