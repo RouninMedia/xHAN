@@ -53,6 +53,12 @@ The main key differences between **xHAN** and **JSON** are:
  - in **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
  - **xHAN** is *visibly* more concise (though it aspires to be as human-readable as JSON)
 
-Beyond these differences, however, the most important difference to note is that **xHAN** allows for *mixed arrays* which are simply not possible in JSON.
-
 ## Mixed Arrays in xHAN
+
+Beyond the differences above, however, the most important difference to note is that **xHAN** allows for *mixed arrays* which are simply not possible in JSON:
+
+### xHAN Mixed Array
+`[mixedArrayTest=[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]`
+
+### JSON Mixed Array *(invalid JSON)*
+`{"mixedArrayTest": {"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"}`
