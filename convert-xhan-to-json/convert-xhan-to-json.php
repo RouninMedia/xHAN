@@ -100,7 +100,7 @@ function relabelIndexKeys (&$xhanArray) {
   $Keys = array_keys($xhanArray);
   $Values = array_values($xhanArray);
 
-  for ($i = 0; $i < count($Keys); $i++) {
+  for ($i = (count($Keys) - 1) ; ($i + 1) > 0; $i--) {
 
     if (is_array($Values[$i])) {
     
