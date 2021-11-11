@@ -34,7 +34,7 @@ This is where **xHAN** comes in.
 
 **xHAN** achieves all of this through the simple expedient of allowing an `=` sign to be followed by unquoted square brackets (`[...]`).
 
-Within the square brackets, comma-separated key-value pairs and lone keys may be nested - and nested within additional unquoted square brackets *to any depth*.
+Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within unquoted square brackets *to any depth*.
 
 For example the JSON above, written in **xHAN** would look like this:
 
