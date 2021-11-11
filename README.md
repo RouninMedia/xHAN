@@ -24,7 +24,7 @@ In HTML it's probable that no other approaches are really needed.
 
 ## Presenting xHAN: an alternative to using JSON in HTML Attributes
 
-In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, a declarative syntax, alternative to JSON, might prove very welcome.
+In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, a simple declarative syntax, alternative to JSON, might prove very welcome.
 
 This is where **xHAN** comes in.
 
@@ -53,9 +53,9 @@ The main key differences between **xHAN** and **JSON** are:
  - in **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
  - **xHAN** is *visibly* more concise (though it aspires to be as human-readable as JSON)
 
-## Mixed Arrays in xHAN
+## Mixed Data in xHAN
 
-Beyond the differences above, however, the most important difference to note is that **xHAN** allows for *mixed arrays* which are simply not possible in JSON.
+Beyond the differences above, however, the most important difference to note is that **xHAN** allows for *mixed data* which is simply not possible in JSON.
 
 Let's take a look at two examples:
 
@@ -69,26 +69,26 @@ corresponds neatly and *exactly* with this visually similar **JSON**:
 
 But *this* **xHAN**:
 
-    [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="array"]
+    [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="dataset"]
 
-represents a data-structure which refuses to correspond with JSON syntax.
+contains *mixed data*, which JSON, within its established syntactic constraints, cannot straightforwardly express.
 
-It doesn't take much inspection to see that a JSON-like construct visually similar to the **xHAN** above *actually **won't** validate as JSON*:
+It doesn't take much inspection to see that a JSON-like construct, visually similar to the **xHAN** above, *actually **won't** validate as JSON*:
 
-    [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "array"]
+    [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "dataset"]
     
-This is because JSON has *two* principal types of data-block:
+This is because JSON has *two* strict types of data-block:
 
  - JS array-notation data-blocks which contain a series of values (`[]`) 
  - JS object-notation data-blocks which contains a series of name-value pairs (`{}`)
 
-By contrast, **xHAN** has only **one** type of data-block:
+By contrast, **xHAN** has only **one** type of block for all types of data:
 
- - *mixed-array data-blocks* which contain a series of *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="array"`)
+ - *mixed-array data-blocks* which contain a series of *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="dataset"`)
 
 Because of this crucial difference, when you computationally convert the second **xHAN** above into JSON, the conversion delivers the following output:
 
-    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"2":"xHAN","which":"represents","4":"a","mixed":"array"}
+    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"2":"xHAN","which":"represents","4":"a","mixed":"dataset"}
 
 which *is* valid JSON.
 
