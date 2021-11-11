@@ -9,7 +9,7 @@ Occasionally, we see HTML attributes which have a name but no value (since the v
 
 **e.g.** `checked`
 
-Conventionally, **HTML Attribute Values** consist of a single string - although this string may also include spaces.
+Where HTML Attributes do have values, then, conventionally, **HTML Attribute Values** consist of a single string - although this string may also include spaces.
 
 If an **HTML Attribute Value** is required to represent a more sophisticated data structure, there aren't many options.
 
