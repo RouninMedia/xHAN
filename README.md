@@ -5,7 +5,7 @@ HTML attributes typically display as a name-value pair:
 
 **e.g.** `title="This will display as a tooltip"`
 
-Occasionally, we see HTML attributes which have no value:
+Occasionally, we see HTML attributes which have a name but no value (since the value is implicit):
 
 **e.g.** `checked`
 
