@@ -61,36 +61,26 @@ Let's take a look at two examples:
 
 This **xHAN**:
 
-    [[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
+    [[this="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
 
 corresponds neatly and *exactly* with this visually similar **JSON**:
 
-    [{"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]
+    [{"this": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]
 
 But *this* **xHAN**:
 
-    [[my=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="array"]
+    [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="array"]
 
-represents a data-structure which refuses to correspond with *JSON syntax*.
+represents a data-structure which refuses to correspond with JSON syntax.
 
 It doesn't take much inspection to see that a JSON-like construct visually similar to the **xHAN** above *actually **isn't** valid JSON*:
 
-    [{"my": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "xHAN", "which": "represents", "a", "mixed": "array"]
+    [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "array"]
     
 This is because in JSON data-blocks either use:
 
  - JS array-notation (`[]`) which contains a series of values
- - JS object-notation (`{}`) which contains a series of name-value pairs 
+ - JS object-notation (`{}`) which contains a series of name-value pairs
 
-JSON 2
-{"mixedArrayTest":{"my":"sophisticated","data":["structure","is","contained"]},["within","this"],"JSON"}
+But the JSON-like construct immediately above contains a series of both values (e.g. `"a"`) *and* name-value pairs (e.g. `"mixed": "array"`).
 
-XHAN 2 (converted to JSON)
-{"mixedArrayTest":{"my":"sophisticated","data":["structure","is","contained"]},"1":["within","this"],"2":"xHAN"}
-
-
-### xHAN Mixed Array
-`[mixedArrayTest=[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]`
-
-### JSON Mixed Array *(invalid JSON)*
-`{"mixedArrayTest": {"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"}`
