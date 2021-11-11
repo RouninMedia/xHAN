@@ -39,3 +39,11 @@ For example the JSON above, written in **xHAN** would look like this:
     
 A cursory glance reveals that **xHAN** notation is not radically different from **JSON** notation. But it *is*, quite intentionally, a little shorter and simpler, not least because it is derived from HTML, rather than JavaScript.
 
+## Differences between xHAN and JSON
+
+The key differences between **xHAN** and **JSON** are:
+
+ - **xHAN** is more concise, though seeks to be as human-readable as JSON
+ - **xHAN** only requires quotes around values (while JSON requires quotes around keys *and* values)
+ - in **xHAN**, square brackets (`[` and `]`) play double duty representing the equivalent of both `{}` *and* `[]` in JSON
+ - 
