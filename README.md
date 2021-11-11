@@ -16,11 +16,11 @@ This string may also include commas or spaces, so rather than a single value, th
 But if an **HTML Attribute Value** is required to represent a data structure more sophisticated than a *space-separated list of values*, there aren't many options.
 
 ## Using JSON in HTML Attributes
-One option - possibly the only one - is for the value to be written as a **JSON String** which may then be parsed into a javascript object (or PHP array etc.):
+One approach which enables **HTML Attributes** to contain more complex data structures - possibly the only one - is for the HTML Value to be written as a **JSON String** which may then be parsed into a javascript object (or PHP array etc.):
 
     myattribute='[{"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]'
     
-In HTML it's probable that no other options are really needed.
+In HTML it's probable that no other approaches are really needed.
 
 In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, an alternative declarative syntax to JSON might prove very useful.
 
