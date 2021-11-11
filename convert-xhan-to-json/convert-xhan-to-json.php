@@ -1,5 +1,3 @@
-```php
-
 <?php
 
 // SET PLACEKEYS
@@ -185,6 +183,3 @@ echo 'XHAN 3 (converted to JSON)'."\n";
 echo $convertedXhan3."\n\n";
 
 ?>
-
-
-```
