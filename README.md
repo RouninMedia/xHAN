@@ -28,9 +28,9 @@ In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, a decla
 
 This is where **xHAN** comes in.
 
-**xHAN** uses HTML-like notation and allows for the deployment of indexed, associative and mixed arrays.
-
-**xHAN** also allows for multidimensional arrays of these types.
+ - **xHAN** uses HTML-like notation
+ - **xHAN** allows for the deployment of indexed, associative and mixed arrays.
+ - **xHAN** also allows for multidimensional arrays of these types.
 
 **xHAN** achieves all of this through the simple expedient of allowing an `=` sign to be followed by unquoted square brackets (`[...]`).
 
