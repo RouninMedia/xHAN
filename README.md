@@ -13,7 +13,7 @@ Where HTML Attributes do have values, then, conventionally, **HTML Attribute Val
 
 This string may also include commas or spaces, so rather than a single value, the single string *may* represent a comma-separated (or space-separated) list of values.
 
-But if an **HTML Attribute Value** is required to represent a data structure more sophisticated than a space-separated list of values, there aren't many options.
+But if an **HTML Attribute Value** is required to represent a data structure more sophisticated than a *space-separated list of values*, there aren't many options.
 
 One option - possibly the only one - is for the value to be written as a **JSON String** which may then be parsed into a javascript object (or PHP array etc.):
 
