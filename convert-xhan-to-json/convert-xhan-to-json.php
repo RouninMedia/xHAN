@@ -157,7 +157,7 @@ $myJSON = '[{"my":"sophisticated","data":["structure","is","contained"]},["withi
 $convertedXhan = xhanStringToJSON($myXhan);
 
 $myXhan2 = '[mixedArrayTest=[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]';
-$myJSON2 = '{"mixedArrayTest":{"my":"sophisticated","data":["structure","is","contained"]},["within","this"],"JSON"}';
+$myJSON2 = '{"mixedArrayTest":{"my":"sophisticated","data":["structure","is","contained"]},["within","this"],"invalid JSON"}';
 $convertedXhan2 = xhanStringToJSON($myXhan2);
 
 $myXhan3 = '[[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="array"]';
