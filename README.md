@@ -22,7 +22,7 @@ One approach which enables **HTML Attributes** to contain more complex data stru
     
 In HTML it's probable that no other approaches are really needed.
 
-## Presenting xHan: an alternative to using JSON in HTML Attributes
+## Presenting xHAN: an alternative to using JSON in HTML Attributes
 
 In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, an alternative declarative syntax to JSON might prove very useful.
 
