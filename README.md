@@ -18,7 +18,7 @@ But if an **HTML Attribute Value** is required to represent a data structure mor
 ## Using JSON in HTML Attributes
 One approach which enables **HTML Attributes** to contain more complex data structures - possibly the only one - is for the HTML Value to be written as a **JSON String** which may then be parsed into a javascript object (or PHP array etc.):
 
-    myattribute='[{"my": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]'
+    myattribute='[{"this": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]'
     
 In HTML it's probable that no other approaches are really needed.
 
@@ -38,7 +38,7 @@ Within the square brackets, comma-separated lone keys and key-value pairs may be
 
 For example the JSON above, written in **xHAN** would look like this:
 
-    myattribute=[[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
+    myattribute=[[this="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
     
 A cursory glance reveals that **xHAN** notation is *not* radically different from **JSON** notation.
 
@@ -48,9 +48,9 @@ But it *is*, quite intentionally, a little shorter and simpler to write, not lea
 
 The main key differences between **xHAN** and **JSON** are:
 
- - Like HTML, **xHAN** uses an `=` as a key-value separator, instead of `: `
- - Like HTML, **xHAN** only requires quotes around `values` (while JSON requires quotes around `keys` *and* `values`)
- - In **xHAN**, square brackets (`[` and `]`) play double duty, representing the equivalent of both `{}` *and* `[]` in JSON
+ - as with HTML, **xHAN** uses an `=` as a key-value separator, instead of `: `
+ - as with HTML, **xHAN** only requires quotes around `values` (while JSON requires quotes around `keys` *and* `values`)
+ - square brackets (`[` and `]`) play double duty in **xHAN**, representing the equivalent of both `{}` *and* `[]` in JSON
  - **xHAN** is *visibly* more concise (though it aspires to be as human-readable as JSON)
 
 ## Mixed Data in xHAN
@@ -59,7 +59,7 @@ Beyond the differences above, however, the most important difference to note is 
 
 Let's take a look at two examples:
 
-This **xHAN**:
+The **xHAN** we used above:
 
     [[this="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
 
@@ -71,13 +71,13 @@ But *this* **xHAN**:
 
     [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="dataset"]
 
-contains *mixed data*, which JSON, within its established syntactic constraints, cannot straightforwardly express.
+contains *mixed data*, which JSON, due to its syntactic constraints, cannot straightforwardly express.
 
 It doesn't take much inspection to see that a JSON-like construct, visually similar to the **xHAN** above, *actually **won't** validate as JSON*:
 
     [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "dataset"]
     
-This is because JSON has *two* strict types of data-block:
+This is because JSON has *two* strictly distinct types of data-block:
 
  - JS array-notation data-blocks which contain a series of values (`[]`) 
  - JS object-notation data-blocks which contains a series of name-value pairs (`{}`)
