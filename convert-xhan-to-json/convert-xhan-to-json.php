@@ -122,6 +122,8 @@ function relabelIndexKeys (&$xhanArray) {
 
 function xhanStringToJSON ($xhanString) {
 
+  if ($xhanString[0] !== '[') return $xhanString;
+
   $xhanString = preg_replace('/\s+/', '', $xhanString);
   $xhanString = str_replace('[', '{"', $xhanString);
   $xhanString = str_replace(']', '"}', $xhanString);
@@ -182,4 +184,10 @@ echo $myXhan3."\n\n";
 echo 'XHAN 3 (converted to JSON)'."\n";
 echo $convertedXhan3."\n\n";
 
+echo xhanStringToJSON('[This, is, an, array]')."\n";
+echo xhanStringToJSON('[This="is", also, an, array]')."\n";
+echo xhanStringToJSON('This is a string')."\n";
+
+
 ?>
+
