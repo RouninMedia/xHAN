@@ -88,8 +88,8 @@ By contrast, **xHAN** has only **one** way to group related data:
 
 Because of this crucial difference, when you computationally convert the second **xHAN** above into JSON, the conversion delivers the following output:
 
-    {"0":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1":["within","this"],"2":"xHAN","which":"represents","4":"a","mixed":"dataset"}
-
+    {"0.":{"this":{"more":"sophisticated"},"data":["structure","is","contained"]},"1.":["within","this"],"2.":"xHAN","which":"represents","4.":"a","mixed":"dataset"}
+    
 which *is* valid JSON.
 
 
