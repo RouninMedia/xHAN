@@ -55,7 +55,7 @@ The main key differences between **xHAN** and **JSON** are:
 
 ## Mixed Data in xHAN
 
-Beyond the differences above, however, the most important difference to note is that **xHAN** allows for *mixed data* which is simply not possible in JSON.
+Beyond the differences above, however, the most important difference to note is that **xHAN** is capable of describing and handling *mixed data* which JSON cannot express.
 
 Let's take a look at two examples:
 
@@ -71,20 +71,20 @@ But *this* **xHAN**:
 
     [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="dataset"]
 
-contains *mixed data*, which JSON, due to its syntactic constraints, cannot straightforwardly express.
+contains *mixed data*, which JSON, due to its syntactic constraints, cannot handle.
 
-It doesn't take much inspection to see that a JSON-like construct, visually similar to the **xHAN** above, *actually **won't** validate as JSON*:
+When we write a JSON-like string, visually similar to the **xHAN** above, we quickly see that it ***won't** validate as JSON*:
 
     [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "dataset"]
     
-This is because JSON has *two* strictly distinct types of data-block:
+This is because JSON has *two* strictly distinct ways to group related data:
 
- - JS array-notation data-blocks which contain a series of values (`[]`) 
- - JS object-notation data-blocks which contains a series of name-value pairs (`{}`)
+ - JS array-notation data-groups which contain a series of values (`[]`) 
+ - JS object-notation data-groups which contains a series of name-value pairs (`{}`)
 
-By contrast, **xHAN** has only **one** type of block for all types of data:
+By contrast, **xHAN** has only **one** way to group related data:
 
- - *mixed-array data-blocks* which contain a series of *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="dataset"`)
+ - *mixed-array data-groups* which can contain a series combining *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="dataset"`)
 
 Because of this crucial difference, when you computationally convert the second **xHAN** above into JSON, the conversion delivers the following output:
 
