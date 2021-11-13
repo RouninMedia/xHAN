@@ -44,18 +44,18 @@ A cursory glance reveals that **xHAN** notation is *not* radically different fro
 
 But it *is*, quite intentionally, a little shorter and simpler to write, not least because the notation is borrowed from HTML syntax, rather than from JavaScript.
 
-## Differences between xHAN and JSON
+## Key Differences between xHAN and JSON
 
-The main key differences between **xHAN** and **JSON** are:
+Key differences between **xHAN** and **JSON** include:
 
- - as with HTML, **xHAN** uses an `=` as a key-value separator, instead of `: `
- - as with HTML, **xHAN** only requires quotes around `values` (while JSON requires quotes around `keys` *and* `values`)
+ - **xHAN** uses an `=` as a key-value separator, instead of `: `
+ - **xHAN** only requires quotes around `values` (while JSON requires quotes around `keys` *and* `values`)
  - square brackets (`[` and `]`) play double duty in **xHAN**, representing the equivalent of both `{}` *and* `[]` in JSON
- - **xHAN** is *visibly* more concise (though it aspires to be as human-readable as JSON)
+ - **xHAN** is *visibly* more concise than JSON (though it aspires to be as human-readable as JSON)
 
 ## Mixed Data in xHAN
 
-Beyond the differences above, however, the most important difference to note is that **xHAN** is capable of describing and handling *mixed data* which JSON cannot express.
+Beyond the key differences above, however, the *most* important difference to note is that **xHAN** is capable of describing and handling *mixed data* which JSON cannot express.
 
 Let's take a look at two examples:
 
@@ -67,7 +67,7 @@ corresponds neatly and *exactly* with this visually similar **JSON**:
 
     [{"this": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]
 
-But *this* **xHAN**:
+But *this* more complex **xHAN**:
 
     [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="dataset"]
 
@@ -92,7 +92,7 @@ Because of this crucial difference, when you computationally convert the second 
     
 which *is* valid JSON.
 
-## What is the point of xHAN being able to handle mixed data?
+## What is the *point* of xHAN being able to handle mixed data?
 
 It's worth underlining that even though **xHAN** is capable of handling mixed data, most data structures will never usually be written this way.
 
@@ -114,6 +114,6 @@ By contrast, with **xHAN** we can simply add the value `Lamb` and the **xHAN** r
 
 The **xHAN** above converts to the following JSON:
 
-    {"Mary":"had","a":"little","2.":"lamb"}
+    {"Mary": "had", "a": "little", "2.": "lamb"}
 
 
