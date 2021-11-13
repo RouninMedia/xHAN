@@ -106,10 +106,14 @@ The reason is this. If we take a pair of datasets, one **JSON** and one **xHAN**
 If we wish to add the single value `"Lamb"` to the JSON above, the entire data structure will need some re-arranging:
 
  - **Invalid JSON:** `{"Mary": "Had", "A": "Little", "Lamb"}`
- - **Valid JSON:** `[{"Mary": "Had", "A": "Little"}, "Lamb"]` or `[{"Mary": "Had"}, {"A": "Little"}, "Lamb"]`
+ - **Valid JSON:** `[{"Mary": "Had", "A": "Little"}, "Lamb"]` *or* `[{"Mary": "Had"}, {"A": "Little"}, "Lamb"]`
 
 By contrast, with **xHAN** we can simply add the value `Lamb` and the **xHAN** remains valid:
 
 - **Valid xHAN:** `[Mary="Had", A="Little", Lamb]`
+
+The **xHAN** above converts to the following JSON:
+
+    {"Mary":"had","a":"little","2.":"lamb"}
 
 
