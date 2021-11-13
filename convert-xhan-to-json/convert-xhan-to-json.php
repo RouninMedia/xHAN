@@ -14,28 +14,8 @@ function setPlacekeys ($xhanString, $n = 0) {
 }
 
 
-// REMOVE PLACEKEYS
-function removePlacekeys (&$xhanArray) {
-  
-  $Keys = array_keys($xhanArray);
-  $Values = array_values($xhanArray);
-  
-  for ($i = 0; $i < count($Keys); $i++) {
-    
-    if (substr($Keys[$i], 0, 9) === 'PLACEKEY_') {
-    
-      array_splice($xhanArray, $i, 0, [$Values[$i]]);
-      unset($xhanArray[$Keys[$i]]);
-    }
-  }
-}
-
-
 // POPULATE EMPTY PROPERTIES
 function populateEmptyProperties (&$xhanArray) {
-    
-  // REMOVE PLACEKEYS
-  removePlacekeys($xhanArray);
 
   // FIND AND POPULATE EMPTY PROPERTIES
   $Keys = array_keys($xhanArray);
@@ -59,41 +39,6 @@ function populateEmptyProperties (&$xhanArray) {
 }
 
 
-// IDENTIFY ARRAYS (AND STRINGS)
-function identifyArrays (&$xhanArray) {
-  
-  $Array_Identified = 0;
-  $Keys = array_keys($xhanArray);
-  $Values = array_values($xhanArray);
-
-  for ($i = 0; $i < count($Keys); $i++) {
-      
-    if ($Keys[$i] === $Values[$i]) {
-        
-      array_splice($xhanArray, $i, 0, [$Values[$i]]);
-      unset($xhanArray[$Keys[$i]]);
-    }
-    
-    else {
-    
-      $Array_Identified++;
-    }
-
-    if (is_array($Values[$i])) {
-    
-      $xhanArray[$Keys[$i]] = identifyArrays($Values[$i]);
-    }
-  }
-
-  switch (TRUE) {
-  
-    case ($Array_Identified > 0) : return $xhanArray;
-    case (count($Keys) > 1) : return [...$Keys];
-    default : return $Keys[0];
-  }
-}
-
-
 // RE-LABEL INDEX KEYS
 function relabelIndexKeys (&$xhanArray) {
 
@@ -107,11 +52,14 @@ function relabelIndexKeys (&$xhanArray) {
       $xhanArray[$Keys[$i]] = relabelIndexKeys($Values[$i]);
     }
 
-    if (is_numeric($Keys[$i]) === FALSE) continue;
+    if ((substr($Keys[$i], 0, 9) === 'PLACEKEY_') || ($Keys[$i] === $Values[$i])) {
   
-    if ($Keys[$i] !== $i) {
-    
-      array_splice($xhanArray, $i, 0, [$Values[$i]]);
+      // Splice into associative array
+      $newArray = array_slice($xhanArray, 0, $i, true) +
+      [$i.'.' => $Values[$i]] +
+      array_slice($xhanArray, $i, NULL, true);
+      
+      $xhanArray = $newArray;
       unset($xhanArray[$Keys[$i]]);
     }
   }
@@ -120,15 +68,48 @@ function relabelIndexKeys (&$xhanArray) {
 }
 
 
+// IDENTIFY ARRAYS (AND STRINGS)
+function identifyArrays (&$xhanArray) {
+  
+  $Array_Identified = 0;
+  $Keys = array_keys($xhanArray);
+  $Values = array_values($xhanArray);
+
+  for ($i = 0; $i < count($Keys); $i++) {
+      
+    if ($Keys[$i] !== $Values[$i]) {
+    
+      $Array_Identified++;
+    }
+
+    if (is_array($Values[$i])) {
+    
+      $xhanArray[$Keys[$i]] = identifyArrays($Values[$i]);
+    }
+  }
+
+  switch (TRUE) {
+  
+    case ($Array_Identified > 0) : return relabelIndexKeys($xhanArray);
+    case (count($Keys) > 1) : return [...$Keys];
+    default : return $Keys[0];
+  }
+}
+
+
 function xhanStringToJSON ($xhanString) {
 
   if ($xhanString[0] !== '[') return $xhanString;
 
-  $xhanString = preg_replace('/\s+/', '', $xhanString);
+  $xhanString = preg_replace('/\[\s+/', '[', $xhanString);
+  $xhanString = preg_replace('/\s+\]/', ']', $xhanString);
+  $xhanString = preg_replace('/\s+/', ', ', $xhanString);
+  $xhanString = str_replace(',,', ',', $xhanString);
   $xhanString = str_replace('[', '{"', $xhanString);
   $xhanString = str_replace(']', '"}', $xhanString);
   $xhanString = str_replace('=', '": "', $xhanString);
   $xhanString = str_replace(',', '", "', $xhanString);
+  $xhanString = str_replace('" ', '"', $xhanString);
   $xhanString = str_replace('"{', '{', $xhanString);
   $xhanString = str_replace('}"', '}', $xhanString);
   $xhanString = preg_replace('/"{2,}/', '"', $xhanString);
@@ -141,11 +122,10 @@ function xhanStringToJSON ($xhanString) {
   $xhanString = str_replace(': "PLACEKEY": {', ': {', $xhanString);
   $xhanString = substr($xhanString, 12);
   $xhanString = setPlacekeys($xhanString);
-
+  
   $xhanArray = json_decode($xhanString, TRUE);
   $xhanArray = populateEmptyProperties($xhanArray);
   $xhanArray = identifyArrays($xhanArray);
-  $xhanArray = relabelIndexKeys($xhanArray);
 
   $myJSON = json_encode($xhanArray);
 
@@ -188,6 +168,9 @@ echo xhanStringToJSON('[This, is, an, array]')."\n";
 echo xhanStringToJSON('[This="is", also, an, array]')."\n";
 echo xhanStringToJSON('This is a string')."\n";
 
+echo xhanStringToJSON('[ Mary="had",  a="little" ]')."\n";
+echo xhanStringToJSON('[Mary="had",  a="little" lamb]')."\n";
+echo xhanStringToJSON('[Mary="had", a="little" lamb, its, fleece="was", white, as="snow"]')."\n";
 
 ?>
 
