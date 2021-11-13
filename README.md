@@ -92,4 +92,24 @@ Because of this crucial difference, when you computationally convert the second 
     
 which *is* valid JSON.
 
+## What is the point of xHAN being able to handle mixed data?
+
+It's worth underlining that even though **xHAN** is capable of handling mixed data, most data structures will never usually be written this way.
+
+So it's reasonable to ask why **xHAN** should be able to handle mixed data at all - especially when JSON doesn't go to these lengths.
+
+The reason is this. If we take a pair of datasets, one **JSON** and one **xHAN**:
+
+ - **JSON:** `{"Mary": "Had", "A": "Little"}`
+ - **xHAN:** `[Mary="Had", A="Little"]`
+
+If we wish to add the single value `"Lamb"` to the JSON above, the entire data structure will need some re-arranging:
+
+ - **Invalid JSON:** `{"Mary": "Had", "A": "Little", "Lamb"}`
+ - **Valid JSON:** `[{"Mary": "Had", "A": "Little"}, "Lamb"]` or `[{"Mary": "Had"}, {"A": "Little"}, "Lamb"]`
+
+By contrast, with **xHAN** we can simply add the value:
+
+- **Valid xHAN:** `[Mary="Had", A="Little", Lamb]`
+
 
