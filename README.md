@@ -50,10 +50,10 @@ Key differences between **xHAN** and **JSON** include:
 
  - **xHAN** uses an `=` as a key-value separator, instead of `: `
  - In **xHAN** quotes around `keys` and `values` are entirely optional. JSON requires quotes around `keys` and `values`. By contrast, **xHAN** can take quotes around `keys` *or* `values` *or* both *or* neither. That is to say, these four examples of **xHAN**:
- - 
+
+   - `[mixedArrayTest=[my=sophisticated, data=[structure, is, contained]], [within, this], xHAN]`
    - `[mixedArrayTest=[my="sophisticated", data=[structure, is, contained]], [within, this], xHAN]`
    - `[mixedArrayTest=[my="sophisticated", data=["structure", "is", "contained"]], ["within", "this"], xHAN]`
-   - `[mixedArrayTest=[my=sophisticated, data=[structure, is, contained]], [within, this], xHAN]`
    - `["mixedArrayTest"=["my"="sophisticated", "data"=["structure", "is", "contained"]], ["within", "this"], "xHAN"]`
    
    are *functionally identical*
