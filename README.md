@@ -34,11 +34,13 @@ This is where **xHAN** comes in.
 
 **xHAN** achieves *all of this* through the simple expedient of:
 
- - **Allowing an `=` sign to be followed by unquoted square brackets** (`[...]`).
+ - Allowing an `=` sign to be followed by **unquoted square brackets** (`[...]`)
 
-Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within unquoted square brackets *to any depth*.
+That's it.
 
-For example the JSON above, written in **xHAN** would look like this:
+Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within **unquoted square brackets** *to any depth*.
+
+For example, the JSON above, written in **xHAN** would look like this:
 
     myattribute=[[this=sophisticated, data=[structure, is, contained]], [within, this], xHAN]
     
