@@ -66,7 +66,7 @@ Key differences between **xHAN** and **JSON** include:
 
 ## Mixed Data in xHAN
 
-Beyond the key differences above, however, the ***most important difference*** to note is that **xHAN** is capable of describing and handling *mixed data* which JSON cannot express.
+Beyond the key differences above, however, the ***most important difference*** to note is that **xHAN** is capable of describing and handling *mixed data* which JSON *cannot* express.
 
 Let's take a look at two examples:
 
