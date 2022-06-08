@@ -107,12 +107,12 @@ which *is* valid JSON.
 
 It's worth underlining that even though **xHAN** is capable of handling mixed data, most data structures will never usually be written this way.
 
-So, if not, it's reasonable to ask why **xHAN** should be able to handle mixed data at all - especially when JSON doesn't go to these lengths.
+So, it's reasonable to ask why **xHAN** should be able to handle mixed data at all - especially when JSON doesn't go to these lengths.
 
 The reason is this. If we take a pair of datasets, one **JSON** and one **xHAN**:
 
  - **JSON:** `{"Mary": "Had", "A": "Little"}`
- - **xHAN:** `[Mary="Had", A="Little"]`
+ - **xHAN:** `[Mary=Had, A=Little]`
 
 If we wish to add the single value `"Lamb"` to the JSON above, the entire data structure will need some re-arranging:
 
@@ -121,10 +121,10 @@ If we wish to add the single value `"Lamb"` to the JSON above, the entire data s
 
 By contrast, with **xHAN** we can simply add the value `Lamb` and the **xHAN** remains valid:
 
-- **Valid xHAN:** `[Mary="Had", A="Little", Lamb]`
+- **Valid xHAN:** `[Mary=Had, A=Little, Lamb]`
 
 The **xHAN** above converts to the following JSON:
 
-    {"Mary": "had", "a": "little", "2.": "lamb"}
+    {"Mary": "Had", "A": "Little", "2.": "Lamb"}
 
 
