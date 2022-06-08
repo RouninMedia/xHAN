@@ -38,7 +38,7 @@ Within the square brackets, comma-separated lone keys and key-value pairs may be
 
 For example the JSON above, written in **xHAN** would look like this:
 
-    myattribute=[[this="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
+    myattribute=[[this=sophisticated, data=[structure, is, contained]], [within, this], xHAN]
     
 A cursory glance reveals that **xHAN** notation is *not* radically different from **JSON** notation.
 
