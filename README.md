@@ -75,7 +75,7 @@ contains *mixed data*, which JSON, due to its syntactic constraints, cannot hand
 
 When we write a JSON-like string, visually similar to the **xHAN** above, we quickly see that it ***won't** validate as JSON*:
 
-    [{"this": {"more": "sophisticated"}, "data": [structure, is, contained]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "dataset"]
+    [{"this": {"more": "sophisticated"}, "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON", "which": "represents", "a", "mixed": "dataset"]
     
 This is because JSON has *two* strictly distinct ways to group related data:
 
