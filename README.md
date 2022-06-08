@@ -1,4 +1,6 @@
 # xHAN
+*A data-interchange format, alternative to JSON, which uses HTML-like syntax and allows for mixed data.*
+
 xHAN is *e**x**tended **H**TML **A**ttribute **N**otation*.
 
 HTML attributes typically display as a name-value pair:
@@ -20,7 +22,7 @@ One approach which enables **HTML Attributes** to contain more complex data stru
 
     myattribute='[{"this": "sophisticated", "data": ["structure", "is", "contained"]}, ["within", "this"], "JSON"]'
     
-In HTML it's probable that no other approaches are really needed.
+In HTML it's plausible that no other approaches are really needed.
 
 ## Presenting xHAN: an alternative to using JSON in HTML Attributes
 
@@ -46,10 +48,9 @@ For example, the JSON above, written in **xHAN** would look like this:
     
 A cursory glance reveals that **xHAN** notation is *not* radically different from **JSON** notation.
 
-But it *is*, quite intentionally, a little shorter and simpler to write, not least because the notation is borrowed from HTML syntax, rather than from JavaScript.
+But it *is* (quite intentionally) a little shorter and simpler to write, not least because the notation is borrowed from HTML syntax, rather than from JavaScript.
 
 ## Key Differences between xHAN and JSON
-
 Key differences between **xHAN** and **JSON** include:
 
  - **xHAN** uses an `=` as a key-value separator, instead of `: `
@@ -65,14 +66,13 @@ Key differences between **xHAN** and **JSON** include:
  - **xHAN** is *visibly* more concise than JSON (though it aspires to be as human-readable as JSON)
 
 ## Mixed Data in xHAN
-
 Beyond the key differences above, however, the ***most important difference*** to note is that **xHAN** is capable of describing and handling *mixed data* which JSON *cannot* express.
 
 Let's take a look at two examples:
 
 The **xHAN** we used above:
 
-    [[this="sophisticated", data=[structure, is, contained]], [within, this], xHAN]
+    [[this=sophisticated, data=[structure, is, contained]], [within, this], xHAN]
 
 corresponds neatly and *exactly* with this visually similar **JSON**:
 
@@ -80,7 +80,7 @@ corresponds neatly and *exactly* with this visually similar **JSON**:
 
 But *this* more complex **xHAN**:
 
-    [[this=[more="sophisticated"], data=[structure, is, contained]], [within, this], xHAN, which="represents", a, mixed="dataset"]
+    [[this=[more=sophisticated], data=[structure, is, contained]], [within, this], xHAN, which=represents, a, mixed=dataset]
 
 contains *mixed data*, which JSON, due to its syntactic constraints, cannot handle.
 
@@ -95,7 +95,7 @@ This is because JSON has *two* strictly distinct ways to group related data:
 
 By contrast, **xHAN** has only **one** way to group related data:
 
- - *mixed-array data-groups* which can contain a series combining *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed="dataset"`)
+ - *mixed-array data-groups* which can contain a series combining *both* values (e.g. `xHAN`) *and* name-value pairs (e.g. `mixed=dataset`)
 
 Because of this crucial difference, when you computationally convert the second **xHAN** above into JSON, the conversion delivers the following output:
 
