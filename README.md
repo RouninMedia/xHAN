@@ -26,7 +26,7 @@ In HTML it's plausible that no other approaches are really needed.
 
 ## Presenting xHAN: an alternative to using JSON in HTML Attributes
 
-In an *HTMLElement-like* structure like a **DaNIS³H Capsule**,  though, a simple declarative syntax, alternative to JSON, might prove very welcome.
+In an *HTMLElement-like* structure like a **DaNIS³H Capsule** or a **DaNIS³H Capsule Reference**,  though, a simple declarative syntax, alternative to JSON, might prove very welcome.
 
 This is where **xHAN** comes in.
 
@@ -40,7 +40,9 @@ This is where **xHAN** comes in.
 
 That's it.
 
-Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within **unquoted square brackets** *to any depth*. Additionally, for visual clarity, attributes in **xHAN** attribute collections may *optionally* be separated by a comma as well as one or more spaces
+Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within **unquoted square brackets** *to any depth*.
+
+Additionally, for visual clarity, attributes in **xHAN** attribute collections may *optionally* be separated by a comma as well as one or more spaces
 
 For example, the JSON above, written in **xHAN** would look like this:
 
