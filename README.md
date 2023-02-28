@@ -37,6 +37,7 @@ This is where **xHAN** comes in.
 **xHAN** achieves *all of this* through the simple expedient of:
 
  - Allowing an `=` sign to be followed by **unquoted square brackets** (`[...]`)
+ - For visual clarity, *attributes* in **xHAN** *attribute collections* may *optionally* be separated by a comma as well as one or more spaces
 
 That's it.
 
