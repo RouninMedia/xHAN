@@ -42,7 +42,7 @@ That's it.
 
 Within the square brackets, comma-separated lone keys and key-value pairs may be nested - and they may continue to be nested within **unquoted square brackets** *to any depth*.
 
-Additionally, for visual clarity, attributes in **xHAN** attribute collections may *optionally* be separated by a comma as well as one or more spaces
+Additionally, for visual clarity, attributes in **xHAN** attribute collections may *optionally* be separated by a comma as well as one or more spaces.
 
 For example, the JSON above, written in **xHAN** would look like this:
 
